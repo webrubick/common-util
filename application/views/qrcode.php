@@ -57,11 +57,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="public/js/jquery.min.js"></script> 
 <script type="text/javascript" src="public/js/jquery.qrcode.min.js"></script> 
 <script type="text/javascript">
+	var qrcodeText = decodeURIComponent("<?php echo $qrcode; ?>");
+	console.log(qrcodeText);
 	$("#code").qrcode({
 	    render: "table", //table方式 
 	    width: 200, //宽度 
 	    height:200, //高度 
-	    text: "<?php echo $qrcode; ?>" //任意内容 
+	    text: qrcodeText //任意内容 
 	}); 
 </script>
 </body>
